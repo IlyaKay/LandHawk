@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 
 # START OF PROGRAM
 start = time.time()
-sDate = datetime.datetime.today().strftime('%Y-%m-%d')
+eDate = datetime.datetime.today().strftime('%Y-%m-%d')
 
 # pull credentials out of env
 load_dotenv()
@@ -33,9 +33,9 @@ conn = psycopg2.connect("host='{h}' dbname='{d}' user='{u}' password='{p}' "
 curs = conn.cursor()
 print("Connected!\n")
 
-while datetime.datetime.strptime(sDate,"%Y-%m-%d") < datetime.datetime.strptime(takeMonth(sDate),"%Y-%m-%d"):
+for i in range(1):
 
-    eDate = addMonth(sDate)
+    sDate = takeMonth(eDate)
 
     # execute our Query
     curs.execute("""select 
@@ -78,7 +78,7 @@ while datetime.datetime.strptime(sDate,"%Y-%m-%d") < datetime.datetime.strptime(
                                                   "conditions,referred,rejected,unresolved,total"),rows
     )
 
-    sDate = addMonth(sDate)
+    eDate = takeMonth(eDate)
 
 # print("Rows: \n")
 # for row in rows:

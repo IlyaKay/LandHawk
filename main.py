@@ -80,6 +80,7 @@ for i in range(1):
 
     eDate = takeMonth(eDate)
 
+# print out records using for loop
 # print("Rows: \n")
 # for row in rows:
 #     print("   ", row)
@@ -87,11 +88,11 @@ for i in range(1):
 # print out the records using pretty print
 # pprint.pprint(rows)
 
-
-curs.execute("""select * from _planning.tbl_monthly_authority_stats""")
-rows = curs.fetchall()
-for row in rows:
-    print("   ", row)
+# display all stats
+# curs.execute("""select * from _planning.tbl_monthly_authority_stats""")
+# rows = curs.fetchall()
+# for row in rows:
+#     print("   ", row)
 
 conn.commit()
 curs.close()

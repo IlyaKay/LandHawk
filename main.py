@@ -39,6 +39,7 @@ def main():
         # conn.cursor will return a cursor object, you can use this cursor to perform queries
         curs = conn.cursor()
         print("Connected!\n")
+        logging.info('Connection established')
 
         for i in range(1):
 

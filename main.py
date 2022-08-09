@@ -18,7 +18,7 @@ def main():
     try:
         # START OF PROGRAM
         start = time.time()
-        eDate = datetime.datetime.today().strftime('%Y-%m-%d')
+        eDate = datetime.datetime.today().strftime('%Y-%m-01')
 
         # pull credentials out of env
         load_dotenv()
